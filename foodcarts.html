@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Food Cart Project</title>
 
+    <link rel="stylesheet" type="text/css" media="screen" href="resources/css/foodcarts.css">
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
@@ -19,20 +21,133 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="text-center" style="background-color: #333; color: #fff;">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
             <div class="collapse navbar-collapse justify-content-md-center">
-                <div class="navbar-brand">
-                    Food Cart Project
-                </div>
                 <ul class="navbar-nav">
                     <a class="nav-link" href="index.html">Home</a>
                     <a class="nav-link active" href="foodcarts.html">Food Carts</a>
-                    <a class="nav-link" href="other.html">Other</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </ul>
             </div>
         </nav>
     </header>
+    <main role="main" class="">
+        <div class="jumbotron bg-dark text-white" style="margin-top: 2.5%;">
+            <h1 class="display-4">BC Food Carts</h1>
+            <p class="lead">Find the right food for you</p>
+            <hr class="my-4">
+            <div class="d-flex justify-content-center">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+            <div class="d-flex justify-content-center" style="margin-top: 2%;">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p class="lead">Show only open carts</p>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark" style="margin: 0 20% 2rem 20%;">
+            <!-- <img class="card-img-top" src="resources/images/FoodCart-Waffles.jpg" alt="Card image cap"> -->
+            <div class="card-header">
+                <img src="resources/images/FoodCart-Waffles.jpg" class="rounded float-left img-fluid" style="height: auto;">
+                <h4 class="card-title">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-left">Sample Cart Name 1</div>
+                            <div class="col text-right">OPEN</div>
+                        </div>
+                    </div>
+                    <!-- <p class="text-left">Sample Cart Name 1</p>
+                    <p class="text-right">OPEN</p> -->
+                </h4>
+                <h6 class="card-text">Subtitle/Type of food served</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">$5 - $12</p>
+                <p class="card-text">10:00 AM - 6:30 PM</p>
+                <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
+            </div>
+            <div class="card-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-left">Tags: #waffles #dessert</div>
+                        <div class="col text-right"><a class="card-link" href="#">&gt; View Menu</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-white bg-dark" style="margin: 0 20% 2rem 20%;">
+            <div class="card-header">
+                <img src="" class="rounded float-left img-fluid" style="height: auto;">
+                <h4 class="card-title">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-left">Sample Cart Name 2</div>
+                            <div class="col text-right">OPEN</div>
+                        </div>
+                    </div>
+                    <!-- <p class="text-center">Sample Cart Name 2</p>
+                    <p class="text-right">OPEN</p> -->
+                </h4>
+                <h6 class="card-text">Subtitle/Type of food served</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">$3 - $10</p>
+                <p class="card-text">10:00 AM - 8:00 PM</p>
+                <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
+            </div>
+            <div class="card-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-left">Tags: #halal #hot</div>
+                        <div class="col text-right"><a class="card-link" href="#">&gt; View Menu</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card text-white bg-secondary" style="margin: 0 20% 2rem 20%;">
+            <div class="card-header">
+                <img src="" class="rounded float-left img-fluid" style="height: auto;">
+                <h4 class="card-title">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col text-left">Sample Cart Name 3</div>
+                            <div class="col text-right">CLOSED</div>
+                        </div>
+                    </div>
+                    <!-- <p class="text-center">Sample Cart Name 3</p>
+                    <p class="text-right">CLOSED</p> -->
+                </h4>
+                <h6 class="card-text">Subtitle/Type of food served</h6>
+            </div>
+            <div class="card-body">
+                <p class="card-text">$5 - $10</p>
+                <p class="card-text">9:00 AM - 5:00 PM</p>
+                <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
+            </div>
+            <div class="card-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col text-left">Tags: #yogurt</div>
+                        <div class="col text-right"><a class="card-link" href="#">&gt; View Menu</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Group project by Genesis Jackson, Jiahau Liao, Mathew Davidov, and Tomasz Wiercioch.</p>
+        </div>
+    </footer>
 </body>
 </html>
