@@ -24,13 +24,13 @@
 
     <!-- Navbar -->
 
-    <header>
-        <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+    <header role="banner">
+        <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" role="navigation">
             <div class="collapse navbar-collapse justify-content-md-center">
                 <ul class="navbar-nav">
-                    <a class="nav-link" href="index.html">Home</a>
-                    <a class="nav-link active" href="foodcarts.html">Food Carts</a>
-                    <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="index.html" title="Home">Home</a>
+                    <a class="nav-link active" href="foodcarts.html" title="Food Carts">Food Carts</a>
+                    <a class="nav-link" href="about.html" title="About">About</a>
                 </ul>
             </div>
         </nav>
@@ -45,8 +45,8 @@
             <hr class="my-4">
             <div class="d-flex justify-content-center">
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" role="search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
             <div class="d-flex justify-content-center" style="margin-top: 2%;">
@@ -59,137 +59,149 @@
         </div>
 
         <!-- Foodcarts using bootstrap cards -->
+        <!-- "bg-dark" = OPEN cart -->
+        <!-- "bg-light" = CLOSED cart -->
 
-        <div class="card text-white bg-dark" style="margin: 0 20% 2rem 20%;">
-            <!-- <img class="card-img-top" src="resources/images/FoodCart-Waffles.jpg" alt="Card image cap"> -->
-            <div class="card-header">
-                <img src="resources/images/FoodCart-Waffles.jpg" class="rounded float-left img-fluid" alt="Waffles" style="height: auto;">
-                <h4 class="card-title">
+        <!-- Added 'div role="list"' to surround the list 
+            and role="listitem" to each food cart div -->
+           
+        <div role="list">
+            <div class="card text-white bg-dark" style="margin: 0 20% 2rem 20%;" role="listitem">
+                <!-- <img class="card-img-top" src="resources/images/FoodCart-Waffles.jpg" alt="Card image cap"> -->
+                <div class="card-header">
+
+                    <!-- Changed img alt to 'alt=""' because these images are decorative 
+                    https://webaim.org/techniques/alttext/
+                    -->
+
+                    <img src="resources/images/FoodCart-Waffles.jpg" class="rounded float-left img-fluid" alt="" style="height: auto;">
+                    <h4 class="card-title">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">Sample Cart Name 1</div>
+                                <div class="col text-right">OPEN</div>
+                            </div>
+                        </div>
+                        <!-- <p class="text-left">Sample Cart Name 1</p>
+                        <p class="text-right">OPEN</p> -->
+                    </h4>
+                    <h6 class="card-text">Subtitle/Type of food served</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">$5 - $12</p>
+                    <p class="card-text">10:00 AM - 6:30 PM</p> 
+                    <div id="googleMap1" style="height: 400px; width: 100%;">
+                        
+                    </div>
+                    <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
+                </div>
+                <div class="card-footer">
                     <div class="container">
                         <div class="row">
-                            <div class="col text-left">Sample Cart Name 1</div>
-                            <div class="col text-right">OPEN</div>
-                        </div>
-                    </div>
-                    <!-- <p class="text-left">Sample Cart Name 1</p>
-                    <p class="text-right">OPEN</p> -->
-                </h4>
-                <h6 class="card-text">Subtitle/Type of food served</h6>
-            </div>
-            <div class="card-body">
-                <p class="card-text">$5 - $12</p>
-                <p class="card-text">10:00 AM - 6:30 PM</p> 
-                <div id="googleMap1" style="height: 400px; width: 100%;">
-                    
-                </div>
-                <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
-            </div>
-            <div class="card-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-left">Tags: #waffles #dessert</div>
-                        <div class="col dropdown dropup text-right">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Menu
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" type="button">Sample Cart Name 1 Menu</button>
-                                <div class="dropdown-divider"></div>
-                                <button class="dropdown-item" type="button">Menu Item #1: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #2: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #3: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #4: $0.00</button>
+                            <div class="col text-left">Tags: #waffles #dessert</div>
+                            <div class="col dropdown dropup text-right">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Menu
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item" type="button">Sample Cart Name 1 Menu</button>
+                                    <div class="dropdown-divider"></div>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #1: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #2: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #3: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #4: $0.00</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card text-white bg-dark" style="margin: 0 20% 2rem 20%;">
-            <div class="card-header">
-                <img src="resources/images/FoodCart-Halal.jpg" class="rounded float-left img-fluid" alt="Halal" style="height: auto;">
-                <h4 class="card-title">
+            <div class="card text-white bg-dark" style="margin: 0 20% 2rem 20%;" role="listitem">
+                <div class="card-header">
+                    <img src="resources/images/FoodCart-Halal.jpg" class="rounded float-left img-fluid" alt="" style="height: auto;">
+                    <h4 class="card-title">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">Sample Cart Name 2</div>
+                                <div class="col text-right">OPEN</div>
+                            </div>
+                        </div>
+                        <!-- <p class="text-center">Sample Cart Name 2</p>
+                        <p class="text-right">OPEN</p> -->
+                    </h4>
+                    <h6 class="card-text">Subtitle/Type of food served</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">$3 - $10</p>
+                    <p class="card-text">10:00 AM - 8:00 PM</p>
+                    <div id="googleMap2" style="height: 400px; width: 100%;">
+                        
+                    </div>
+                    <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
+                </div>
+                <div class="card-footer">
                     <div class="container">
                         <div class="row">
-                            <div class="col text-left">Sample Cart Name 2</div>
-                            <div class="col text-right">OPEN</div>
-                        </div>
-                    </div>
-                    <!-- <p class="text-center">Sample Cart Name 2</p>
-                    <p class="text-right">OPEN</p> -->
-                </h4>
-                <h6 class="card-text">Subtitle/Type of food served</h6>
-            </div>
-            <div class="card-body">
-                <p class="card-text">$3 - $10</p>
-                <p class="card-text">10:00 AM - 8:00 PM</p>
-                <div id="googleMap2" style="height: 400px; width: 100%;">
-                    
-                </div>
-                <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
-            </div>
-            <div class="card-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-left">Tags: #halal #hot</div>
-                        <div class="col dropdown dropup text-right">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Menu
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" type="button">Sample Cart Name 2 Menu</button>
-                                <div class="dropdown-divider"></div>
-                                <button class="dropdown-item" type="button">Menu Item #1: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #2: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #3: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #4: $0.00</button>
+                            <div class="col text-left">Tags: #halal #hot</div>
+                            <div class="col dropdown dropup text-right">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Menu
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item" type="button">Sample Cart Name 2 Menu</button>
+                                    <div class="dropdown-divider"></div>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #1: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #2: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #3: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #4: $0.00</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card text-white bg-secondary" style="margin: 0 20% 2rem 20%;">
-            <div class="card-header">
-                <img src="resources/images/FoodCart-Yogurt.jpg" class="rounded float-left img-fluid" alt="Yogurt" style="height: auto;">
-                <h4 class="card-title">
+            <div class="card text-white bg-secondary" style="margin: 0 20% 2rem 20%;" role="listitem">
+                <div class="card-header">
+                    <img src="resources/images/FoodCart-Yogurt.jpg" class="rounded float-left img-fluid" alt="" style="height: auto;">
+                    <h4 class="card-title">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">Sample Cart Name 3</div>
+                                <div class="col text-right">CLOSED</div>
+                            </div>
+                        </div>
+                        <!-- <p class="text-center">Sample Cart Name 3</p>
+                        <p class="text-right">CLOSED</p> -->
+                    </h4>
+                    <h6 class="card-text">Subtitle/Type of food served</h6>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">$5 - $10</p>
+                    <p class="card-text">9:00 AM - 5:00 PM</p>
+                    <div id="googleMap3" style="height: 400px; width: 100%;">
+                        
+                    </div>
+                    <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
+                </div>
+                <div class="card-footer">
                     <div class="container">
                         <div class="row">
-                            <div class="col text-left">Sample Cart Name 3</div>
-                            <div class="col text-right">CLOSED</div>
-                        </div>
-                    </div>
-                    <!-- <p class="text-center">Sample Cart Name 3</p>
-                    <p class="text-right">CLOSED</p> -->
-                </h4>
-                <h6 class="card-text">Subtitle/Type of food served</h6>
-            </div>
-            <div class="card-body">
-                <p class="card-text">$5 - $10</p>
-                <p class="card-text">9:00 AM - 5:00 PM</p>
-                <div id="googleMap3" style="height: 400px; width: 100%;">
-                    
-                </div>
-                <p class="card-text">2900 Bedford Ave, Brooklyn, NY 11210</p>
-            </div>
-            <div class="card-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-left">Tags: #yogurt</div>
-                        <div class="col dropdown dropup text-right">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                Menu
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item" type="button">Sample Cart Name 3 Menu</button>
-                                <div class="dropdown-divider"></div>
-                                <button class="dropdown-item" type="button">Menu Item #1: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #2: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #3: $0.00</button>
-                                <button class="dropdown-item" type="button">Menu Item #4: $0.00</button>
+                            <div class="col text-left">Tags: #yogurt</div>
+                            <div class="col dropdown dropup text-right">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Menu
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item" type="button">Sample Cart Name 3 Menu</button>
+                                    <div class="dropdown-divider"></div>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #1: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #2: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #3: $0.00</button>
+                                    <button class="dropdown-item" type="button" role="option">Menu Item #4: $0.00</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -200,12 +212,12 @@
 
     <!-- Footer (names) -->
 
-    <footer class="mastfoot mt-auto">
+    <footer class="mastfoot mt-auto" role="contentinfo">
         <div class="inner text-dark"> <!-- If background is dark, remove "text-dark" -->
             <p>Group project by Genesis Jackson, Jiahau Liao, Mathew Davidov, and Tomasz Wiercioch.</p>
         </div>
     </footer>
     <script src="resources/js/main.js"></script>
 </body>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPz3PFzigH9ktMV2GnEIz5Qju4jY3-Rqs&callback=initMap"></script>
 </html>
